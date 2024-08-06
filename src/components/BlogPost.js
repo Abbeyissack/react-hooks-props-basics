@@ -1,16 +1,15 @@
 import React from "react";
-import BlogContent from "./BlogContent";
-import Comment from "./Comment";
-
-function BlogPost() {
+import user from "../data/user";
+import Links from "./Links";
+function About(props) {
   return (
-    <div id="blog-post">
-      <BlogContent articleText="Dear Reader: Bjarne Stroustrup has the perfect lecture oration." />
-      <Comment commentText="I agree with this statement. - Angela Merkel" />
-      <Comment commentText="A universal truth. - Noam Chomsky" />
-      <Comment commentText="Truth is singular. Its ‘versions’ are mistruths. - Sonmi-451" />
+    <div id="about">
+      <h2>About Me</h2>
+      {props.bio ? <p>{props.bio}</p> : ""}
+      <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
+      <Links github={user.links.github} linkedin={user.links.linkedin} />
     </div>
   );
 }
 
-export default BlogPost;
+export default About;
